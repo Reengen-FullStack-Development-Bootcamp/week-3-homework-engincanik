@@ -1,23 +1,25 @@
 <template>
-  <div>
+  <div class="align-center">
     <canvas id="line-chart"></canvas>
   </div>
 </template>
 
 <script>
 import Chart from "chart.js";
-import planetChartData from "@/assets/planet-data.js";
 export default {
   name: "LineChart",
+  props: {
+    chartData: Object,
+  },
   data() {
     return {
-        planetChartData: planetChartData
+      chartState: false,
     };
   },
   mounted() {
-      const ctx = document.getElementById('line-chart');
-      new Chart(ctx, this.planetChartData)
-  }
+    const ctx = document.getElementById("line-chart");
+    new Chart(ctx, this.chartData);
+  },
 };
 </script>
 
