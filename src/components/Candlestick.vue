@@ -1,5 +1,10 @@
 <template>
-	<div class="chart" ref="chart"></div>
+	<div>
+		<v-overlay :value="overlayStateChange">
+			<v-progress-circular indeterminate size="64"></v-progress-circular>
+		</v-overlay>
+		<div class="chart" ref="chart"></div>
+	</div>
 </template>
 
 <script>
@@ -40,8 +45,14 @@ export default {
 					dataArray.push(newObject);
 				}
 			}
-			console.log(dataArray.splice(0, 30).reverse());
 			return dataArray.splice(0, 30).reverse();
+		},
+		overlayStateChange() {
+			if (this.formattedStockData.length === 0) {
+				return true;
+			} else {
+				return false;
+			}
 		},
 	},
 	methods: {

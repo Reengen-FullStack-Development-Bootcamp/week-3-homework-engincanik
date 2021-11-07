@@ -14,6 +14,12 @@ const routes = [
         name: 'Result',
         props: true,
         component: () => import('@/views/ResultPage.vue')
+    },
+    {
+        path: '/logs/',
+        name: 'Logs',
+        props: true,
+        component: () => import('@/views/LogPage.vue')
     }
 ]
 

@@ -139,7 +139,6 @@ export default {
 			}
 		},
 		goSearchResultView() {
-			console.log(this.$store.getters.getTimeSelection);
 			this.$store.dispatch("getSelectedStock");
 			this.$router.push({
 				name: "Result",

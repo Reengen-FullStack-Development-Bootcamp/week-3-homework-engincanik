@@ -10,6 +10,8 @@ export default new Vuex.Store({
         searchInput: "",
         stockData: "",
         timeSelection: "TIME_SERIES_DAILY",
+        userRole: "Guest",
+        logCount:0,
     },
     mutations: {
         setCurrentStock(state, payload)
@@ -28,11 +30,14 @@ export default new Vuex.Store({
         {
             state.timeSelection = payload;
         },
+        setUserRole(state, payload)
+        {
+            state.userRole = payload
+        }
     },
     actions: {
         getSelectedStock(context)
         {
-            console.log("NO PARAMS");
             axios
                 .get("https://www.alphavantage.co/query", {
                     params: {
@@ -43,14 +48,12 @@ export default new Vuex.Store({
                 })
                 .then((response) =>
                 {
-                    console.log(response)
                     context.commit("setStockData", response);
                 })
                 .catch((error) => console.log(error));
         },
         getSelectedStockWithParameter(context, params)
         {
-            console.log("WITH PARAMS");
             axios
                 .get("https://www.alphavantage.co/query", {
                     params: {
@@ -61,7 +64,6 @@ export default new Vuex.Store({
                 })
                 .then((response) =>
                 {
-                    console.log(response)
                     context.commit("setStockData", response);
                 })
                 .catch((error) => console.log(error));
