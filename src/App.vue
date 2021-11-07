@@ -10,7 +10,7 @@
 					transition="scale-transition"
 					width="40"
 				/>
-				<div>Stockly</div>
+				<v-btn @click="goToHomePage()" color="black">Stockly</v-btn>
 			</div>
 
 			<v-spacer></v-spacer>
@@ -63,6 +63,12 @@ export default {
 				query: {
 					userRole: this.userRole,
 				},
+			});
+		},
+		goToHomePage() {
+            if (this.$route.path != "/")
+			this.$router.push({
+				name: "Home",
 			});
 		},
 	},
