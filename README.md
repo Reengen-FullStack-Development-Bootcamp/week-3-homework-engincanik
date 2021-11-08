@@ -4,7 +4,7 @@
 
 ## Project Details
 
-Simple stock price checker site. Developed with Vue, Vuetify and D3.js . You can check your favorite stock's price daily, weekly and monthly. Site uses Alphavantage API for stock information.
+Simple stock price checker site. Developed with Vue, Vuetify, and D3.js. You can check your favorite stock's price daily, weekly, and monthly. The site uses Alphavantage API for stock information. Since it is a free account you can only get 5 requests per minute.
 
 ## Project Demo
 
