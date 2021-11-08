@@ -50,6 +50,9 @@
 				</v-btn-toggle>
 			</v-row>
 			<div class="d-flex justify-center">
+				<h3 class="blue--text">{{ $route.query.symbol }}</h3>
+			</div>
+			<div class="d-flex justify-center">
 				<candlestick class="chart" />
 			</div>
 		</v-card>
